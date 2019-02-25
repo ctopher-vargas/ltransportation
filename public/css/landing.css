@@ -1,0 +1,196 @@
+
+body {
+  background-color: black;
+}
+
+/*nav stylings*/
+.navbar {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.bg-custom {
+   background-color: rgba(0,0,0,0.8);
+   opacity: 0;
+   -webkit-animation: 1.5s fadein 1s forwards;
+           animation: 1.5s fadein 1s forwards; 
+}
+
+@-webkit-keyframes fadein {
+  100% {
+    opacity: 1; 
+  }
+}
+@keyframes fadein {
+  100% {
+    opacity: 1; 
+  }
+}
+
+.navbar a {
+  font-size: 18px;
+}
+
+.navbar .navbar-brand {
+  font-size: 18px !important; 
+}
+
+.navbar a:hover {
+ color: lightslategrey !important; 
+}
+
+a {   
+  color: white !important;
+  text-shadow: 0 4px 3px rgba(0,0,0,0.4), 
+         0 8px 13px rgba(0,0,0,0.1),
+         0 18px 23px rgba(0,0,0,0.1);   
+  text-decoration: none;
+}
+
+
+h1 {
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  font-weight: bold; 
+  font-size: 50px;
+  text-shadow: 0 4px 3px rgba(0,0,0,0.4), 
+         0 8px 13px rgba(0,0,0,0.1),
+         0 18px 23px rgba(0,0,0,0.1); 
+  opacity: 0; 
+  -webkit-animation: 2s fadein 2s forwards; 
+          animation: 2s fadein 2s forwards; 
+}
+
+h3 {
+  color: white; 
+  font-family: 'Oswald', sans-serif; 
+  text-shadow: 0 4px 3px rgba(0,0,0,0.4), 
+         0 8px 13px rgba(0,0,0,0.1),
+         0 18px 23px rgba(0,0,0,0.1); 
+  padding-bottom: 15px; 
+}
+
+.content {
+  z-index: 1; 
+  position: relative; 
+  text-align: center;
+  margin-top: 30vh; 
+  margin-right: 10%; 
+  margin-left: 10%; 
+  border: .5px solid white; 
+  padding: 25px 0;
+  background: rgba(105,105,105, .4);
+  opacity: 0; 
+  -webkit-animation: 2s fadein 2s forwards; 
+          animation: 2s fadein 2s forwards; 
+}
+
+.content .mid-form a {
+  border: 1px white solid; 
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase; 
+  border-radius: 5px;
+  color: white; 
+  padding: 10px 10px; 
+  margin-bottom: 20px; 
+  text-decoration: none;  
+
+}
+
+.content .mid-form a:hover {
+  -webkit-animation: 0.5s fadebutton forwards;
+          animation: 0.5s fadebutton forwards; 
+}
+
+#msg-flash{
+  margin-top: 30px; 
+}
+
+@-webkit-keyframes fadebutton {
+  100% {
+    background-color: black; 
+    border-color: black; 
+    color: white; 
+  }
+}
+
+@keyframes fadebutton {
+  100% {
+    background-color: black; 
+    border-color: black; 
+    color: white; 
+  }
+}
+
+.slideshow {
+  position: fixed; 
+  width: 100%; 
+  height: 100%;
+  top: 0; 
+  left: 0; 
+  z-index: 0; 
+  list-style: none; 
+  margin: 0; 
+  padding: 0; 
+}
+
+.slideshow li { 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  /*centers images perfectly on the page*/
+  background-position: 50% 50%;
+  /*images don't repeat vertically or horizontally */
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  /*fades images in and out, linear means animation is same speed, loops infinitly*/
+  -webkit-animation: imageAnimation 50s linear infinite;
+          animation: imageAnimation 50s linear infinite; 
+}
+
+.slideshow li:nth-child(1) { 
+  background-image: url(../images/main.jpg) 
+}
+.slideshow li:nth-child(2) { 
+  background-image: url(../images/main_2.jpg);
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s; 
+}
+.slideshow li:nth-child(3) { 
+  background-image: url(../images/boxes.jpg);
+  -webkit-animation-delay: 20s;
+          animation-delay: 20s; 
+}
+.slideshow li:nth-child(4) { 
+  background-image: url(../images/cargo.jpg);
+  -webkit-animation-delay: 30s;
+          animation-delay: 30s; 
+}
+.slideshow li:nth-child(5) { 
+  background-image: url(../images/truck.jpg);
+  -webkit-animation-delay: 40s;
+          animation-delay: 40s; 
+}
+
+@Keyframes imageAnimation { 
+  0% { 
+    opacity: 0; 
+    -webkit-animation-timing-function: ease-in; 
+            animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}
+
